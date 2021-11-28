@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Search by Filter </title>
+    <!-- fontwesome -->
+        <script src="https://kit.fontawesome.com/1935d064dd.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- styles -->
+        <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- navbar -->
+        <div class="nav-container">
+            <div class="nav-sec1">
+                <div class="nav-logo">
+                    <a href="#">
+                        <img src="./images/logo.jpg" alt="Navbar-Image">
+                        <h2> ELECTRONIC </h2>
+                    </a>
+                </div>
+                <div class="nav-brand-store">
+                    <ul class="nav-brand-store-links">
+                        <li class="div"> <a href="#"> ELECTRONIC BRANDS </a> </li>
+                        <li class="div"> <a href="#"> LOCAL STORE </a> </li>
+                        <li class="div"> <a href="#"> <i class="fa fa-shopping-cart"></i> CART </a> </li>
+                    </ul>
+                    <div class="nav-login">
+                        <div class="btn btn1" data-toggle="modal" data-target="#loginModal"> <i class="fa fa-sign-in"></i> Sign in</div>
+                        <div class="btn btn1" data-toggle="modal" data-target="#signupModal"> <i class="fa fa-address-book"></i> Sign UP</div>
+                    </div>
+                </div>
+
+                <div class="nav-toggle">
+                   <div class="nav-toogle-btn">
+                       <div></div>
+                       <div></div>
+                       <div></div>
+                   </div>
+                </div>
+
+                <div class="nav-toggle-model-container">
+                    <div class="nav-toggle-modal hide">
+                        <li> <a href="#"> ELECTRONIC BRANDS </a> </li>
+                        <li> <a href="#"> LOCAL STORE </a> </li>
+                        <li> <a href="#"> <i class="fa fa-shopping-cart"></i> CART </a>  </li>
+                        <li> <div class="btn btn1" data-toggle="modal" data-target="#loginModal"> <i class="fa fa-sign-in"></i> Sign in</div> </li>
+                        <li> <div class="btn btn1" data-toggle="modal" data-target="#signupModal"> <i class="fa fa-address-book"></i> Sign UP</div> </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- sidebar -->
+        <div class="sidebar">
+            <div class="sidebar__container">
+                <ul>
+                    <div class="sidebar-li-main">
+                        <p class="sidebar__title">Filters</p>
+                    </div>
+
+                    <div class="sidebar-li-main">
+                        <p class="sidebar__options">
+                            Services
+                            <i class="fas fa-chevron-right"></i>
+                        </p>
+                        <div class="panel">
+                            <div class="common">
+                                <div class="filter-box">
+                                    <div id="services-myDropdown" class="services-myDropdown1 services-dropdown-content">
+                                        <input type="text" placeholder="Search" id="services-myInput" class="services-myInput1" onkeyup="filterFun()" />
+                                        <div class="dropdown-options">
+                                            <li class="btn active" data-filter="all"> ALL </li>
+                                            <li class="btn" data-filter="watch">  WATCH </li>
+                                            <li class="btn" data-filter="tv"> TELEVISION </li>
+                                            <li class="btn" data-filter="mobile"> MOBILES </li>
+                                            <li class="btn" data-filter="desktop"> DESKTOP </li>
+                                            <li class="btn" data-filter="gadgets"> HOME GADGETS </li>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-li-main">
+                        <p class="sidebar__options">
+                            Brand
+                            <i class="fas fa-chevron-right"></i>
+                        </p>
+                        <div class="panel">
+                            <div class="common brand">                 
+                                <div class="filter-box">
+                                    <div id="myDropdown" class="services-myDropdown1 services-dropdown-content">
+                                        <input type="text" placeholder="Search" id="myInput" class="services-myInput1" onkeyup="brandFilterFun()" />
+                                        <div class="dropdown-options brand-dropdown">
+                                            <li class="btn brand-btn active" data-filter="all"> ALL </li>
+                                            <li class="btn brand-btn" data-filter="brand1"> BRAND1 </li>
+                                            <li class="btn brand-btn" data-filter="brand2"> BRAND2 </li>
+                                            <li class="btn brand-btn" data-filter="brand3"> BRAND3 </li>
+                                            <li class="btn brand-btn" data-filter="brand4"> BRAND4 </li>
+                                            <li class="btn brand-btn" data-filter="brand5"> BRAND5 </li>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-li-main">
+                        <p class="sidebar__options">
+                            Price
+                            <i class="fas fa-chevron-right"></i>
+                        </p>
+                        <div class="panel">
+                            <div class="price-list">
+                                <li><a class="price" href="#">$5 - $10</a></li>
+                                <li><a class="price" href="#">$10 - $15</a></li>
+                                <li><a class="price" href="#">$15 - $20</a></li>
+                            </div>
+                        </div>
+                    </div>
+                </ul>
+
+                <div class="sidebar__applyBtn">Apply</div>
+               
+            </div>
+        </div>
+
+    
+        <div class="explore-container">
+            <!-- apply filters button -->
+            <div class="sidebar__btn">
+                <i class="fas fa-bars"></i>
+                Apply Filters
+            </div>
+
+            <div class="container">
+                <div class="slide-cover">
+                    <div class="imgBx">
+                       <img src="./images/desktop.jpg" alt="">
+                    </div>
+        
+                    <div class="card">
+                        <div class="contentBx">
+                            <h2> iPhone 12 </h2>
+                            <p class="data-filter"> mobile </p>
+                            <div class="content-desc">
+                                <h3> APPLE iPhone 12 (Blue, 64 GB) </h3>
+                                <p> brand1 </p>
+                            </div>
+                            <div class="content-price">
+                                <h3><i class="fa fa-rupee"></i></h3>
+                                <p class="price"> 60,999 </p>
+                                <p class="cut-price"> 80,999 </p>
+                            </div>
+                            <a href="#"> Add to cart </a>
+                        </div>
+                    </div>
+                </div>
+        
+              <div class="slide-cover">
+                  <div class="imgBx">
+                      <img src="./images/watch.jpg" />
+                  </div>
+                  <div class="card">
+                      <div class="contentBx">
+                          <h2>Watch</h2>
+                          <p class="data-filter"> watch </p>
+                          <div class="content-desc">
+                              <h3> LCS-8188 BLUE DIAL AND SILVER STRAP DAY & DATE FUNCTIONING WATCH FOR BOYS Analog Watch - For Men </h3>
+                              <p>brand2</p>
+                          </div>
+                          <div class="content-price">
+                              <h3>  <i class="fa fa-rupee"> </i></h3>
+                              <p class="price">60,999</p>
+                              <p class="cut-price">80,999</p>
+                          </div>
+                          <a href="#"> Add to cart </a>
+                      </div>
+                  </div>
+              </div>
+
+            <div class="slide-cover">
+                <div class="imgBx">
+                    <img src="./images/watch.jpg" />
+                </div>
+                <div class="card">
+                    <div class="contentBx">
+                        <h2>Watch</h2>
+                        <p class="data-filter"> watch </p>
+                        <div class="content-desc">
+                            <h3> LCS-8188 BLUE DIAL AND SILVER STRAP DAY & DATE FUNCTIONING WATCH FOR BOYS Analog Watch - For Men </h3>
+                            <p>brand2</p>
+                        </div>
+                        <div class="content-price">
+                            <h3>  <i class="fa fa-rupee"> </i></h3>
+                            <p class="price">60,999</p>
+                            <p class="cut-price">80,999</p>
+                        </div>
+                        <a href="#"> Add to cart </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-cover">
+                <div class="imgBx">
+                    <img src="./images/watch.jpg" />
+                </div>
+                <div class="card">
+                    <div class="contentBx">
+                        <h2>Watch</h2>
+                        <p class="data-filter"> watch </p>
+                        <div class="content-desc">
+                            <h3> LCS-8188 BLUE DIAL AND SILVER STRAP DAY & DATE FUNCTIONING WATCH FOR BOYS Analog Watch - For Men </h3>
+                            <p>brand2</p>
+                        </div>
+                        <div class="content-price">
+                            <h3>  <i class="fa fa-rupee"> </i></h3>
+                            <p class="price">60,999</p>
+                            <p class="cut-price">80,999</p>
+                        </div>
+                        <a href="#"> Add to cart </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-cover">
+                <div class="imgBx">
+                    <img src="./images/watch.jpg" />
+                </div>
+                <div class="card">
+                    <div class="contentBx">
+                        <h2>Watch</h2>
+                        <p class="data-filter"> watch </p>
+                        <div class="content-desc">
+                            <h3> LCS-8188 BLUE DIAL AND SILVER STRAP DAY & DATE FUNCTIONING WATCH FOR BOYS Analog Watch - For Men </h3>
+                            <p>brand2</p>
+                        </div>
+                        <div class="content-price">
+                            <h3>  <i class="fa fa-rupee"> </i></h3>
+                            <p class="price">60,999</p>
+                            <p class="cut-price">80,999</p>
+                        </div>
+                        <a href="#"> Add to cart </a>
+                    </div>
+                </div>
+            </div>
+        
+              <div class="slide-cover">
+                  <div class="imgBx">
+                      <img src="./images/tv.jpg" />
+                  </div>
+                  <div class="card">
+                      <div class="contentBx">
+                          <h2>Android TV</h2>
+                          <p class="data-filter"> tv </p>
+                        <div class="content-desc">
+                            <h3> Croma 109 cm (43 inch) Ultra HD (4K) LED Smart TV (CREL7366) </h3>
+                            <p>brand5</p>
+                        </div>
+                        <div class="content-price">
+                            <h3><i class="fa fa-rupee"></i></h3>
+                            <p class="price">60,999</p>
+                            <p class="cut-price">80,999</p>
+                        </div>
+                        <a href="#"> Add to cart </a>
+                      </div>
+                  </div>
+              </div>
+        
+              <div class="slide-cover">
+                  <div class="imgBx">
+                      <img src="./images/watch3.jpg" />
+                  </div>
+                  <div class="card">
+                      <div class="contentBx">
+                          <h2> Watch </h2>
+                          <p class="data-filter"> watch </p>
+                          <div class="content-desc">
+                              <h3> SAMSUNG 6.5 kg Diamond Drum feature Fully Automatic Top Load Silver (WA65A4002VS/TL) </h3>
+                              <p>brand3</p>
+                          </div>
+                          <div class="content-price">
+                              <h3><i class="fa fa-rupee"></i></h3>
+                              <p class="price">14,999</p>
+                              <p class="cut-price">19,999</p>
+                          </div>
+                          <a href="#"> Add to cart </a>
+                      </div>
+                  </div>
+              </div>
+        
+              <div class="slide-cover">
+                  <div class="imgBx">
+                      <img src="./images/washingmachine.jpg" />
+                  </div>
+                  <div class="card">
+                      <div class="contentBx">
+                          <h2>Washing Machine</h2>
+                          <p class="data-filter"> gadgets </p>
+                          <div class="content-desc">
+                              <h3> SAMSUNG 6.5 kg Diamond Drum feature Fully Automatic Top Load Silver (WA65A4002VS/TL) </h3>
+                              <p>brand4</p>
+                          </div>
+                          <div class="content-price">
+                              <h3><i class="fa fa-rupee"></i></h3>
+                              <p class="price">14,999</p>
+                              <p class="cut-price">19,999</p>
+                          </div>
+                          <a href="#"> Add to cart </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- footer -->
+        <div class="footer__container">
+            <div class="floating__window">
+                <div class="sec-footer">
+                    <h3> Aakanksha <span> something for everyone </span> </h3>
+                    <ul class="sec-footer-lists">
+                        <li class="sec-footer-list"> <i class="fa fa-check"></i> Covid Safety </li>
+                        <li class="sec-footer-list"> <i class="fa fa-check"></i> Trust Worthy </li>
+                        <li class="sec-footer-list"> <i class="fa fa-check"></i> Fastest Delivery </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="footer_top">
+                    <div class="footer_item footer_item_1">
+                        <div class="footer_inner">
+                            <h3>From Our Store</h3>
+                            <p class="title">
+                                Top 10 cities in India.
+                                <span>Added 2 days back</span>
+                            </p>
+                            <p class="title">
+                                Top 10 latest products in India. 
+                                <span>Added 5 days back</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="footer_item footer_item_2">
+                        <div class="footer_inner">
+                            <h3>Menu</h3>
+                            <ul>
+                                <li>Home</li>
+                                <li>Services</li>
+                                <li>Features</li>
+                                <li>Pricing</li>
+                                <li>Blog</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer_item footer_item_3">
+                        <div class="footer_inner">
+                            <h3>Information</h3>
+                            <ul>
+                                <li>About Us</li>
+                                <li>Terms & Conditions</li>
+                                <li>Users Guide</li>
+                                <li>Support Center</li>
+                                <li>Press Info</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer_item footer_item_4">
+                        <div class="footer_inner">
+                            <h3> Email Newsletter </h2>
+                            <p> Subscribe to our mailing list to get update </p>
+                            <form action="#" method="post">
+                                <input type="text" name="text" class="text-input contact-input" placeholder="Your full name..."> <br>
+                                <input type="email" name="email" class="text-input contact-input" placeholder="Your email address..."> <br>
+                                <button type="submit" class="btn btn-big contact-btn"> SUBSCRIBE </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_down">
+                    <p>© Copyright All rights reserved</p>
+                    <div class="socials">
+                        <a href="https://twitter.com/AAKANKS57852311" target="_blank"> <i class="fa fa-twitter"></i> </a>
+                        <a href="https://www.facebook.com/AAKANKSHAcompany" target="_blank"> <i class="fa fa-facebook-official"></i> </a>
+                        <a href="https://www.linkedin.com/company/aakankshaecommerce/?viewAsMember=true" target="_blank"> <i class="fa fa-linkedin"></i> </a>
+                        <a href="https://www.instagram.com/aakankshacompany/" target="_blank"> <i class="fa fa-instagram"></i> </a>
+                        <a href="https://www.youtube.com/channel/UCQ79LZ_IrnxzkFL5MZxxOeg" target="_blank"> <i class="fa fa-youtube"></i> </a>
+                    </div>
+                    <p class="last-ft-p">Created By <span class="createdby"> Aakanksha </span></p>
+                </div>
+            </div>
+        </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
